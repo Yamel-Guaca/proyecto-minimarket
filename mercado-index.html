@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado</title>
+    <!-- Enlazando el archivo CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/media-queries.css">
+    <style>
+        html {
+            --s: 120px;
+            /* control the size */
+            --c1: #ab8565;
+            --c2: #866761;
+            --c3: #b06c07;
+            background: conic-gradient(from 150deg at 50% 33%, #0000, var(--c1) .5deg 60deg, #0000 60.5deg) calc(var(--s) / 2) calc(var(--s) / sqrt(2)), conic-gradient(from -30deg at 50% 66%, #0000, var(--c2) .5deg 60deg, var(--c3) 60.5deg);
+            background-size: var(--s) calc(.5 * var(--s) / tan(30deg));
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="menu container">
+            <a href="#" class="logo">Panaderia</a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/menu.png" class="menu-icono" alt=""></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="homepage.html">Inicio</a></li>
+                    <li><a href="aseo-index.html">Aseo</a></li>
+                    <li><a href="empaques.html">Empaques</a></li>
+                    <li><a href="mascotas-index.html">Mascotas</a></li>
+                    <li><a href="mercado-index.html">Mercado</a></li>
+                    <li><a href="papeleria-index.html">Papelería</a></li>
+                    <button id="logout">Cerrar Sesión</button>
+                </ul>
+            </nav>
+            <div class="container-icon">
+                <div class="container-cart-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-cart">
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+                        />
+                    </svg>
+                    <div class="count-products">
+                        <span id="contador-productos">0</span>
+                    </div>
+                </div>
+
+                <div class="container-cart-products hidden-cart">
+                    <div class="row-product hidden">
+                        <div class="cart-product">
+                            <div class="info-cart-product">
+                                <span class="cantidad-producto-carrito">1</span>
+                                <p class="titulo-producto-carrito">Mini market</p>
+                                <span class="precio-producto-carrito">$80</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon-close">
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
+                                />
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total:</h3>
+                        <span class="total-pagar">$200</span>
+                        <button class="btn-primary" id="checkout-btn">Ir a pagar</button>
+                    </div>
+                    <p class="cart-empty">El carrito está vacío</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-items">
+        <div class="item">
+            <figure>
+                <img src="images/croasan.PNG" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2>Croissant Frances und</h2>
+                <p class="price">$ 3000</p>
+                <button class="btn-add-cart" data-title="Croissant Frances und" data-price="3000">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img src="images/galletas avena.PNG" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2>Galletas De Avena x5und</h2>
+                <p class="price">$ 4500</p>
+                <button class="btn-add-cart" data-title="Galletas De Avena x5und" data-price="4500">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img src="images/galletas ducales.PNG" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2>Galletas Ducales 3 Tacos</h2>
+                <p class="price">$ 9900</p>
+                <button class="btn-add-cart" data-title="Galletas Ducales 3 Tacos" data-price="9900">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img src="images/mogolla.PNG" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2>Mogolla Leche x10 und</h2>
+                <p class="price">$ 5000</p>
+                <button class="btn-add-cart" data-title="Mogolla Leche x10 und" data-price="5000">Añadir al carrito</button>
+            </div>
+        </div>
+        <div class="item">
+            <figure>
+                <img src="images/pan tajado.PNG" alt="producto" />
+            </figure>
+            <div class="info-product">
+                <h2>Pan Tajado Bimbo Familiar </h2>
+                <p class="price">$ 8000</p>
+                <button class="btn-add-cart" data-title="Pan Tajado Bimbo Familiar" data-price="8000">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="blog">
+        <h2>Blog del Minimarket</h2>
+        <article>
+            <h3>Novedades del Minimarket</h3>
+            <p>¡Descubre nuestras ofertas especiales y los productos más vendidos del mes! No te pierdas nuestras novedades.</p>
+        </article>
+        <article>
+            <h3>Consejos de Compra</h3>
+            <p>¿Sabes cómo elegir los mejores productos frescos y de calidad? Te damos las mejores guías de compra.</p>
+        </article>
+        <article>
+            <h3>Recetas y Consejos de Cocina</h3>
+            <p>Explora recetas fáciles y deliciosas utilizando productos de nuestro minimarket. Cocina como un chef con nuestros consejos.</p>
+        </article>
+        <article>
+            <h3>Preparación de Café de Baristas</h3>
+            <p>Aprende a preparar el café perfecto en casa con nuestras guías paso a paso y entrevistas con expertos baristas.</p>
+        </article>
+        <article>
+            <h3>Transición hacia la Agroindustria Alimentaria</h3>
+            <p>Conoce nuestras iniciativas para integrar la agroindustria y apoyar prácticas agrícolas sostenibles y ecológicas.</p>
+        </article>
+    </section>
+
+    <footer class="footer container">
+        <div class="link">
+
+        </div>
+        <div class="link">
+            <h3></h3>
+            <ul>
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+                <li>
+                    <a href="#"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="link">
+            <h3>Contacto</h3>
+            <ul>
+                <li><a href="#">Dirección: Centro de Comercio y Turismo REGIONAL QUINDIO</a></li>
+                <li><a href="tel:+123456789">Teléfono: +57 313809989 +57 305 8747370</a></li>
+                <li><a href="mailto:avillarreal55@sena.edu.co">Correo: info@minimarket.com</a></li>
+                <li><a href="#">Horarios: Lun - Vie: 8am - 8pm</a></li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
